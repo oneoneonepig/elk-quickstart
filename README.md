@@ -11,8 +11,8 @@
 1. Run the following command to parse the log file and store it in Elasticsearch (there is a `test.xml` file for demostration)
     ```
     docker run -d --rm --net elk-quickstart_elk \
-    -v $(pwd)/logstash/logstash.conf:/usr/share/logstash/pipeline/logstash.conf \
-    -v $(pwd)/logstash/logs:/tmp docker.elastic.co/logstash/logstash:7.9.0
+    -v $(pwd)/logstash.conf:/usr/share/logstash/pipeline/logstash.conf \
+    -v $(pwd)/example:/tmp docker.elastic.co/logstash/logstash:7.10.0
     ```
 1. Create the `Kibana Index Pattern` in order to view the log data in Discover
 
@@ -24,7 +24,7 @@
 1. Run the following command to parse the log file and store it in Elasticsearch
      ```
      docker run -d --rm --net elk-quickstart_elk \
-     -v $(pwd)/logstash/logstash.conf:/usr/share/logstash/pipeline/logstash.conf \
-     -v $(pwd)/logstash/logs:/tmp docker.elastic.co/logstash/logstash:7.9.0
+     -v $(pwd)/logstash.conf:/usr/share/logstash/pipeline/logstash.conf \
+     -v $(pwd)/example:/tmp docker.elastic.co/logstash/logstash:7.10.0
      ```
 1. Create the `Kibana Index Pattern` in order to view the log data in Discover
