@@ -1,0 +1,116 @@
+{
+  "index_patterns": [
+    "dns",
+    "dns-*"
+  ],
+  "template": {
+    "settings": {
+      "number_of_shards": 1,
+      "number_of_replicas": 0,
+      "analysis": {
+        "analyzer": {
+          "domain_name_split": {
+            "tokenizer": "domain_name_hierarchy"
+          }
+        },
+        "tokenizer": {
+          "domain_name_hierarchy": {
+            "type": "path_hierarchy",
+            "delimiter": ".",
+            "reverse": "true"
+          }
+        }
+      }
+    },
+    "mappings": {
+      "properties": {
+        "fqdn": {
+          "type": "text",
+          "analyzer": "domain_name_split",
+          "fields": {
+            "keyword": {
+              "type": "keyword"
+            }
+          }
+        },
+        "ttl": {
+          "type": "integer",
+          "fields": {
+            "keyword": {
+              "type": "keyword"
+            }
+          }
+        },
+        "class": {
+          "type": "keyword"
+        },
+        "type": {
+          "type": "keyword"
+        },
+        "rdata": {
+          "type": "ip",
+          "fields": {
+            "keyword": {
+              "type": "keyword"
+            }
+          }
+        },
+        "rdata_fqdn": {
+          "type": "text",
+          "analyzer": "domain_name_split",
+          "fields": {
+            "keyword": {
+              "type": "keyword"
+            }
+          }
+        },
+        "rdata_txt": {
+          "type": "text",
+          "fields": {
+            "keyword": {
+              "type": "keyword"
+            }
+          }
+        },
+        "zone": {
+          "type": "keyword"
+        },
+        "ip_protocol": {
+          "type": "keyword"
+        },
+        "mx_preference": {
+          "type": "integer",
+          "fields": {
+            "keyword": {
+              "type": "keyword"
+            }
+          }
+        },
+        "srv_priority": {
+          "type": "integer",
+          "fields": {
+            "keyword": {
+              "type": "keyword"
+            }
+          }
+        },
+        "srv_weight": {
+          "type": "integer",
+          "fields": {
+            "keyword": {
+              "type": "keyword"
+            }
+          }
+        },
+        "srv_port": {
+          "type": "integer",
+          "fields": {
+            "keyword": {
+              "type": "keyword"
+            }
+          }
+        }
+      }
+    }
+  }
+}
