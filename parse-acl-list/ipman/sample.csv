@@ -1,0 +1,5 @@
+﻿address,location,dep,users,email,useway,status
+10.0.0.1,someplace,DEP_A,user1,user1@mail.com,business,online
+10.0.0.2,someplace,DEP_A,user1,user1@mail.com,business,online
+10.0.0.3,someplace,DEP_B,user2,user2@mail.com,business,online
+10.0.0.4,someplace,DEP_B,user2,user2@mail.com,business,online
